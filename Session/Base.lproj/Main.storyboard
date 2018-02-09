@@ -1,24 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0Cy-bq-wYI">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Navigation Controller-->
+        <scene sceneID="6qB-Cc-Pun">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <navigationController id="0Cy-bq-wYI" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KBY-Or-3pD">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="XXo-dZ-aNC">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="QjQ-H6-ghT" kind="relationship" relationship="rootViewController" id="BAy-S6-1Uj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DeD-92-Wa7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-510" y="-11"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="xGM-Mk-bJ5">
+            <objects>
+                <viewController id="QjQ-H6-ghT" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mtE-nh-WPp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3UR-2S-leY">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </imageView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dMn-e1-b2m">
+                                <rect key="frame" x="112.5" y="332.5" width="150" height="2"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="2ly-Gr-yiY"/>
+                                    <constraint firstAttribute="width" constant="150" id="tLn-yj-IcX"/>
+                                </constraints>
+                            </progressView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="dMn-e1-b2m" firstAttribute="centerY" secondItem="mtE-nh-WPp" secondAttribute="centerY" id="ChH-xd-Oh8"/>
+                            <constraint firstItem="3UR-2S-leY" firstAttribute="leading" secondItem="M2g-3h-E9D" secondAttribute="leading" id="Fl8-As-T4N"/>
+                            <constraint firstItem="dMn-e1-b2m" firstAttribute="centerX" secondItem="mtE-nh-WPp" secondAttribute="centerX" id="YBL-CP-xY8"/>
+                            <constraint firstItem="3UR-2S-leY" firstAttribute="top" secondItem="M2g-3h-E9D" secondAttribute="top" id="cYc-Gf-vi5"/>
+                            <constraint firstItem="M2g-3h-E9D" firstAttribute="trailing" secondItem="3UR-2S-leY" secondAttribute="trailing" id="fHm-4X-zAi"/>
+                            <constraint firstItem="M2g-3h-E9D" firstAttribute="bottom" secondItem="3UR-2S-leY" secondAttribute="bottom" id="iuW-VA-Vr2"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="M2g-3h-E9D"/>
                     </view>
+                    <navigationItem key="navigationItem" id="yko-vO-a7Z">
+                        <barButtonItem key="leftBarButtonItem" title="pause" id="FtM-w8-P8b">
+                            <connections>
+                                <action selector="pause:" destination="QjQ-H6-ghT" id="Q0R-YV-EC7"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="start" id="pxC-SN-AJ1">
+                            <connections>
+                                <action selector="start:" destination="QjQ-H6-ghT" id="krF-1b-Gwa"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="ImgView" destination="3UR-2S-leY" id="rpg-It-eKf"/>
+                        <outlet property="pauseBtn" destination="FtM-w8-P8b" id="rIa-vp-le7"/>
+                        <outlet property="progressView" destination="dMn-e1-b2m" id="eBU-h1-xnF"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uhj-s7-Zqg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="217" y="-9"/>
         </scene>
     </scenes>
 </document>
